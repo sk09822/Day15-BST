@@ -40,4 +40,24 @@ public class BinaryTree {
 
 	}
 
+	public boolean nodePresent(Node root, int val) {
+		if (root == null) {
+			return false;
+		}
+		Boolean isPresent = false;
+
+		while (root != null) {
+			if (val < root.data) {
+				root = root.left;
+			} else if (val > root.data) {
+				root = root.right;
+			} else {
+				isPresent = true;
+				break;
+			}
+
+		}
+		return isPresent;
+	}
+
 }
